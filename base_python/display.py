@@ -37,7 +37,7 @@ def plot( screen, zbuffer, color, x, y, z ):
 def clear_screen( screen ):
     for y in range( len(screen) ):
         for x in range( len(screen[y]) ):
-            screen[y][x] = DEFAULT_COLOR[:]
+            screen[y][x] = [0, 0, 0];
 
 def clear_zbuffer( zb ):
     for y in range( len(zb) ):
@@ -51,7 +51,9 @@ def save_ppm( screen, fname ):
     for y in range( len(screen) ):
         for x in range( len(screen[y]) ):
             pixel = screen[y][x]
-            f.write( bytes(pixel) )
+            for w in range(len(pixel)):
+                f.write(chr(pixel[w]));
+            #f.write( bytes(pixel) )
     f.close()
 
 def save_ppm_ascii( screen, fname ):

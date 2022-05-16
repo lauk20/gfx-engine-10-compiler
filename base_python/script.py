@@ -34,6 +34,7 @@ def run(filename):
 
     stack = [ [x[:] for x in tmp] ]
     screen = new_screen()
+    clear_screen(screen);
     zbuffer = new_zbuffer()
     tmp = []
     step_3d = 100
@@ -47,9 +48,9 @@ def run(filename):
                           'blue': [0.2, 0.5, 0.5]}]
     reflect = '.white'
 
-    print(symbols)
+    #print(symbols)
     for command in commands:
-        print(command)
+        #print(command)
         op = command['op']
         if (op == 'push'):
             stack.append( [x[:] for x in stack[-1]] )
@@ -117,4 +118,4 @@ def run(filename):
             save_extension(screen, command['args'][0] + ".png")
         elif (op == "display"):
             a = 1;
-            #display(screen)
+            display(screen)
