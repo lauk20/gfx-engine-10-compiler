@@ -71,7 +71,7 @@ void my_main() {
   light[LOCATION][1] = 0.75;
   light[LOCATION][2] = 1;
 
-  light[COLOR][RED] = 0;
+  light[COLOR][RED] = 255;
   light[COLOR][GREEN] = 255;
   light[COLOR][BLUE] = 255;
 
@@ -155,6 +155,7 @@ void my_main() {
           matrix_mult(peek(systems), polygons);
           if (op[i].op.box.constants != NULL) {
             if (op[i].op.box.constants->type == SYM_CONSTANTS){
+              printf("box\n");
               draw_polygons(polygons, s, zb, view, light, ambient, op[i].op.box.constants->s.c);
             }
           } else {
@@ -171,7 +172,7 @@ void my_main() {
           matrix_mult(peek(systems), polygons);
           if (op[i].op.sphere.constants != NULL){
             if (op[i].op.sphere.constants->type == SYM_CONSTANTS){
-              printf("constants: %f %f %f\n", op[i].op.sphere.constants->s.c->r[0], op[i].op.sphere.constants->s.c->r[1], op[i].op.sphere.constants->s.c->r[2]);
+              printf("constants: %f %f %f %f %f %f %f %f %f\n", op[i].op.sphere.constants->s.c->r[0], op[i].op.sphere.constants->s.c->r[1], op[i].op.sphere.constants->s.c->r[2], op[i].op.sphere.constants->s.c->g[0], op[i].op.sphere.constants->s.c->g[1], op[i].op.sphere.constants->s.c->g[2], op[i].op.sphere.constants->s.c->b[0], op[i].op.sphere.constants->s.c->b[1], op[i].op.sphere.constants->s.c->b[2]);
               draw_polygons(polygons, s, zb, view, light, ambient, op[i].op.sphere.constants->s.c);
             }
           } else {
