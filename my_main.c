@@ -108,10 +108,10 @@ void my_main() {
 
   struct matrix * polygons = new_matrix(4, 1000);
 
-  print_symtab();
+  //print_symtab();
   for (i=0;i<lastop;i++) {
 
-    printf("%d: ",i);
+    //printf("%d: ",i);
     switch(op[i].opcode)
       {
         case PUSH:
@@ -155,7 +155,6 @@ void my_main() {
           matrix_mult(peek(systems), polygons);
           if (op[i].op.box.constants != NULL) {
             if (op[i].op.box.constants->type == SYM_CONSTANTS){
-              printf("box\n");
               draw_polygons(polygons, s, zb, view, light, ambient, op[i].op.box.constants->s.c);
             }
           } else {
@@ -172,7 +171,7 @@ void my_main() {
           matrix_mult(peek(systems), polygons);
           if (op[i].op.sphere.constants != NULL){
             if (op[i].op.sphere.constants->type == SYM_CONSTANTS){
-              printf("constants: %f %f %f %f %f %f %f %f %f\n", op[i].op.sphere.constants->s.c->r[0], op[i].op.sphere.constants->s.c->r[1], op[i].op.sphere.constants->s.c->r[2], op[i].op.sphere.constants->s.c->g[0], op[i].op.sphere.constants->s.c->g[1], op[i].op.sphere.constants->s.c->g[2], op[i].op.sphere.constants->s.c->b[0], op[i].op.sphere.constants->s.c->b[1], op[i].op.sphere.constants->s.c->b[2]);
+              //printf("constants: %f %f %f %f %f %f %f %f %f\n", op[i].op.sphere.constants->s.c->r[0], op[i].op.sphere.constants->s.c->r[1], op[i].op.sphere.constants->s.c->r[2], op[i].op.sphere.constants->s.c->g[0], op[i].op.sphere.constants->s.c->g[1], op[i].op.sphere.constants->s.c->g[2], op[i].op.sphere.constants->s.c->b[0], op[i].op.sphere.constants->s.c->b[1], op[i].op.sphere.constants->s.c->b[2]);
               draw_polygons(polygons, s, zb, view, light, ambient, op[i].op.sphere.constants->s.c);
             }
           } else {
@@ -221,7 +220,5 @@ void my_main() {
           display(s);
           break;
       }
-
-    printf("\n");
   }
 }
