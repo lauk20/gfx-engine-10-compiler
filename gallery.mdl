@@ -1,0 +1,52 @@
+constants shiny_purple 0.3 0.2 0.8 0.3 0 0 0.3 0.2 0.8
+constants shiny_teal 0.3 0.0 0.0 0.3 0.2 0.8 0.3 0.2 0.8
+constants shiny_yellow 2 0.35 0.9 2 0.2 0.8 0.0 0.0 0.0
+constants shiny_silver 1 0.5 0.5 1 0.5 0.5 1 0.5 0.5
+constants shiny_brown  0.75 0.5 0.75 0.2 0.3 0.5 0.1 0.1 0.3
+push
+push
+move
+225 250 0
+push
+rotate
+x 45
+rotate
+y 45
+scale
+2 2 2
+box shiny_brown
+-40 40 41 60 20 20
+box shiny_brown
+-40 40 60 60 20 20
+box shiny_brown
+-40.001 40 20 60 20 20
+box shiny_silver
+-40 60 50 60 20 20
+box shiny_silver
+-40 60 30 60 20 20
+box shiny_yellow
+-40 80 40 60 20 20
+torus shiny_yellow
+0 0 15 5 60
+sphere shiny_silver
+0 0 75 10
+sphere shiny_silver
+0 0 -45 10
+push
+move
+-15 0 15
+rotate
+y 90
+sphere shiny_yellow
+0 0 75 10
+sphere shiny_yellow
+0 0 -45 10
+pop
+push
+rotate
+z 45
+rotate
+x 45
+display
+save
+gallery.png
