@@ -26,11 +26,12 @@ box shiny_silver
 -40 60 30 60 20 20
 box shiny_yellow
 -40 80 40 60 20 20
+
 torus shiny_yellow
 0 0 15 5 60
-sphere shiny_silver
+sphere shiny_yellow
 0 0 75 10
-sphere shiny_silver
+sphere shiny_yellow
 0 0 -45 10
 push
 move
@@ -41,12 +42,41 @@ sphere shiny_yellow
 0 0 75 10
 sphere shiny_yellow
 0 0 -45 10
-pop
+
 push
+torus shiny_silver
+0 0 15 5 90
+sphere shiny_silver
+0 0 105 10
+sphere shiny_silver
+0 0 -75 10
+push
+move
+-15 0 15
 rotate
-z 45
+y 90
+sphere shiny_silver
+0 0 105 10
+sphere shiny_silver
+0 0 -75 10
+
+push
+torus shiny_brown
+0 0 15 5 120
+sphere shiny_brown
+0 0 135 10
+sphere shiny_brown
+0 0 -105 10
+push
+move
+-15 0 15
 rotate
-x 45
+y 90
+sphere shiny_brown
+0 0 135 10
+sphere shiny_brown
+0 0 -105 10
+
 display
 save
 gallery.png
